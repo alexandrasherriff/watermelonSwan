@@ -1,6 +1,13 @@
 import os
 import shutil
 
+# Create txt file for list of songs and copy the path
+song_list_file = ""
+# Enter path of folder you wish to search
+source_folder = ""
+#  Enter path of folder to where you would like to copy the songs
+destination_folder = ""
+
 
 class SongFinder:
     def __init__(self, song_list_file, source_folder, destination_folder):
@@ -28,11 +35,6 @@ class SongFinder:
                     missing_songs.append(song_name)
         return missing_songs
 
-
-# Example usage
-song_list_file = "/Users/alexandrasherriff/desktop/must_plays/song_list.txt"
-source_folder = "/Users/alexandrasherriff/downloads"
-destination_folder = "/Users/alexandrasherriff/desktop/must_plays/tracks"
 
 song_finder = SongFinder(song_list_file, source_folder, destination_folder)
 missing_songs = song_finder.find_and_copy_songs()
